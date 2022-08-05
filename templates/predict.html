@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Predict</title>
+{% endblock %}
+
+
+{% block body %}
+<h2>Predict_page</h2>
+<hr>
+<br>
+<form action="/predict" , method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="LoanCurrentDaysDelinquent">LoanCurrentDaysDelinquent</label>
+            <input class="form-control" type="number" , step="0.0001" name="LoanCurrentDaysDelinquent" id="LoanCurrentDaysDelinquent" placeholder="LoanCurrentDaysDelinquent"
+                aria-label="LoanCurrentDaysDelinquent">
+            <small id="longhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="LP_CustomerPrincipalPayments">LP_CustomerPrincipalPayments</label>
+            <input class="form-control" type="number" , step="0.0001" name="LP_CustomerPrincipalPayments" id="LP_CustomerPrincipalPayments"
+                placeholder="LP_CustomerPrincipalPayments" aria-label="LP_CustomerPrincipalPayments">
+            <small id="latithelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="LP_GrossPrincipalLoss">LP_GrossPrincipalLoss</label>
+            <input class="form-control" type="number" , step="0.0001" name="LP_GrossPrincipalLoss" id="LP_GrossPrincipalLoss"
+                placeholder="LP_GrossPrincipalLoss" aria-label="LP_GrossPrincipalLoss">
+            <small id="agehelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="LP_CustomerPayments">LP_CustomerPayments</label>
+            <input class="form-control" type="number" , step="0.0001" name="LP_CustomerPayments" id="LP_CustomerPayments"
+                placeholder="LP_CustomerPayments" aria-label="LP_CustomerPayments">
+            <small id="totalhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="LP_InterestandFees">LP_InterestandFees</label>
+            <input class="form-control" type="number" , step="0.0001" name="LP_InterestandFees" id="LP_InterestandFees"
+                placeholder="LP_InterestandFees" aria-label="LP_InterestandFees">
+            <small id="bedhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="LP_ServiceFees">LP_ServiceFees</label>
+            <input class="form-control" type="number" , step="0.0001" name="LP_ServiceFees" id="LP_ServiceFees" placeholder="LP_ServiceFees"
+                aria-label="LP_ServiceFees">
+            <small id="pophelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="MonthlyLoanPayment">MonthlyLoanPayment</label>
+            <input class="form-control" type="number" , step="0.0001" name="MonthlyLoanPayment" id="MonthlyLoanPayment" placeholder="MonthlyLoanPayment"
+                aria-label="MonthlyLoanPayment">
+            <small id="holdhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="AvailableBankcardCredit">AvailableBankcardCredit</label>
+            <input class="form-control" type="number" , step="0.0001" name="AvailableBankcardCredit" id="AvailableBankcardCredit"
+                placeholder="AvailableBankcardCredit" aria-label="AvailableBankcardCredit">
+            <small id="incomehelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="RevolvingCreditBalance">RevolvingCreditBalance</label>
+            <input class="form-control" type="number" , step="0.0001" name="RevolvingCreditBalance" id="RevolvingCreditBalance"
+                placeholder="RevolvingCreditBalance" aria-label="RevolvingCreditBalance">
+            <small id="oceanhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+            <input class="btn btn-success btn-lg btn-block" type="submit" value="Predict">
+            <hr>
+            <h5> Prosper prediction is :    {{ pred_val }}</h5>
+            <hr>
+        </div>
+</form>
+
+
+{% endblock %}
